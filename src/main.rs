@@ -11,10 +11,11 @@ use tokio::time::sleep;
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    sleep(Duration::from_secs(10)).await;
+    sleep(Duration::from_secs(5)).await;
+
     let pool = match PgPoolOptions::new()
         .max_connections(5)
-        .connect("postgres://postgres:a@localhost:5432/plush")
+        .connect("postgres://postgres:a@postgres:5432/plush")
         .await
     {
         Ok(pool) => {
