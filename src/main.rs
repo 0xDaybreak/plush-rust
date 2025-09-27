@@ -69,10 +69,11 @@ async fn buy_heavy(State(pool): State<PgPool>, Json(reqs): Json<Vec<BuyRequest>>
     Json(format!("Processed {} orders", reqs.len()))
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct BuyRequest {
     pub customer_id: i32,
     pub plush_ids: Vec<i64>,
+    pub payload: String,
 }
 
 #[derive(sqlx::FromRow, Serialize, Clone)]
@@ -82,7 +83,7 @@ pub struct Plush {
     pub price: f64,
 }
 
-#[derive(sqlx::FromRow, Serialize, Clone)]
+#[derive(sqlx::FromRow, Serialize, Clone, Debug)]
 pub struct Order {
     pub id: i32,
     pub customer_id: i64,
