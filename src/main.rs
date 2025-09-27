@@ -4,7 +4,7 @@ use axum::{Json, Router, extract::State, routing::post};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use sqlx::postgres::PgPoolOptions;
-use sqlx::{PgPool, query};
+use sqlx::{PgPool};
 use std::net::SocketAddr;
 use std::time::Duration;
 use tokio::net::TcpListener;

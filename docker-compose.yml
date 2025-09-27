@@ -19,6 +19,10 @@ services:
       DATABASE_URL: postgres://postgres:a@postgres:5432/plush
     depends_on:
       - postgres
+    deploy:
+      resources:
+        limits:
+          memory: 16M
     ports:
       - "8080:8080"
 
