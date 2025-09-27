@@ -2,7 +2,7 @@ CREATE TABLE plushies
 (
     id    SERIAL PRIMARY KEY,
     name  TEXT    NOT NULL,
-    price NUMERIC NOT NULL
+    price DOUBLE PRECISION NOT NULL
 );
 
 CREATE TABLE customer

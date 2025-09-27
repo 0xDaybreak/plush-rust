@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: a
       POSTGRES_DB: plush
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -20,7 +20,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8081:8081"
+      - "8080:8080"
 
 volumes:
   postgres_data:
