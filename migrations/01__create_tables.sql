@@ -16,7 +16,7 @@ CREATE TABLE orders
 (
     id           SERIAL PRIMARY KEY,
     order_date   TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    total_amount NUMERIC(10, 2) NOT NULL,
+    total_amount DOUBLE PRECISION NOT NULL,
     customer_id  INTEGER        NOT NULL REFERENCES customer (id)
 );
 
